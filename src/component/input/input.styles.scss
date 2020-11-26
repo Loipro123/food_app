@@ -1,0 +1,68 @@
+.group{
+    @mixin shrink {
+        color: rgb(100,100,100);
+        top: -20px;
+        left: 3px;
+        transition: all .8s;
+    }
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+    
+    .input-field{
+        width: 100%;
+        padding: 10px 5px 10px 40px;
+        font-size: 20px;
+        font-family: 'Dancing Script', cursive;
+        border: 0;
+        border-bottom: 1px solid rgb(217,217,217);
+        background-color: transparent;
+        color: rgb(100,100,100);
+        &:focus{
+            outline: none;
+        }
+    }
+    
+    .input-forcus {
+        height: 1.3px;
+        width: 0;
+        position: absolute;
+        transition: all .5s;
+        bottom: 0;
+        left: 0;
+        background-color:rgb(235,47,100);
+    }
+
+    .input-field:focus ~ .input-forcus{
+        width: 100%;
+        transition: .5s;
+    }
+    .input-field:focus ~ .icon {
+        color: rgb(235,47,100);
+    }
+    .input-field:focus ~.lable{
+        @include shrink();
+    }
+    .icon {
+        position: absolute;
+        font-size: 24px;
+        color: rgb(217,217,217);
+        top: 10px;
+        left: 3px;
+    }
+    .lable{
+        font-size: 20px;
+        font-family: 'Dancing Script', cursive;
+        position: absolute;
+        top: 10px;
+        left: 40px;
+        color: rgb(170,170,170);
+        transition: all 1s;
+        &.shrink{
+          @include shrink();
+        }
+    }
+    .email{
+        font-size: 20px;
+    }
+}

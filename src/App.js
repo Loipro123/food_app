@@ -1,25 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
-
-function App() {
+import Header from './page/header/header.component';
+import {createStructuredSelector} from 'reselect';
+import {list_foodSelector} from './redux/sidebar/sidebar.selector';
+import {connect} from 'react-redux';
+import {Switch,Route} from 'react-router-dom';
+import SidebarHeader from './component/sidebar-header/sidebar-header.component';
+import Login from './component/login/login.component';
+import SignUp from './component/sign-up/sign-up.component';
+import MainPage from './page/main-page/main-page.component';
+const App = ({menuCollections}) =>{
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <div className='main'>
+         <div className='sidebar'>
+               {menuCollections.map((item) => (
+                 <SidebarHeader key={item.id} item={item}/>
+               ))}
+         </div>
+         <div className='mainbar'>
+             <Switch>
+               <Route path='/login' component={Login}/>
+               <Route path='/signup' component={SignUp}/>
+               <Route path='/' component={MainPage}/>
+             </Switch>
+         </div>
+      </div>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = createStructuredSelector({
+  menuCollections: list_foodSelector
+})
+
+export default connect(mapStateToProps)(App);

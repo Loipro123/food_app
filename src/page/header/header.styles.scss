@@ -1,0 +1,52 @@
+
+
+.header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;;
+    background-color: rgb(255,255,255);
+    border-bottom: 1px solid rgb(222,223,224);
+    .logo-box {
+        padding: 0 25px;
+        .logo {
+            fill: rgb(214, 168, 182);
+            
+          }
+    }
+    .options {
+        display: flex;
+        padding: 0 25px;;
+        align-self: stretch;
+        .option{
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            font-size: 25px;
+            padding: 0 20px;
+            color: rgb(189, 93, 120);
+            cursor: pointer;
+            font-family: 'Dancing Script', cursive;
+            transition: all .2s;
+            &:hover:not(:last-child) {
+                background-color: rgb(238, 221, 225);
+            }
+            position: relative;
+        }
+        .shopping-cart{
+            height: 35px;
+            width: 35px;
+            cursor: pointer;
+            margin-bottom: 12px;
+            
+        }
+        .amount{
+            font-size: 20px;
+            position: absolute;
+            font-weight: bold;
+            left: 31px;
+            top: 28px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    }
+}

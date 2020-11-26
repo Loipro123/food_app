@@ -1,0 +1,28 @@
+.side{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Dancing Script', cursive;
+    .title-bar{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 0;
+        cursor: pointer;
+        transition: all .3s;
+        padding: 10px 20px;
+
+        &:hover{
+            background-color: rgb(238, 221, 225);
+        }
+        .title{
+            color: black;
+            font-size: 25px;
+
+        }
+        .title-icon{
+            fill: rgb(189, 93, 120);
+            height: 15px;
+            width: 15px;
+        }
+    }
+}

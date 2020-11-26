@@ -1,0 +1,84 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    padding: 30px 40px 70px 40px;
+    margin: 5% 20%;
+    border-radius: 8px;
+    box-shadow: 2px 5px 10px #8f99a8;
+    .login-title{
+        font-size: 30px;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 50px;
+        font-family: 'Dancing Script', cursive;
+        color: rgba(8,2,2,.7);
+    }
+    .sublink{
+        font-size: 15px;
+        color: black;
+        align-self: flex-end;
+        text-decoration: none;
+        font-family: 'Dancing Script', cursive;
+        text-align: right;
+      
+        &:not(:first-child){
+            margin-bottom: 40px;
+        }
+        &:hover{
+            color: rgb(140,168,228);
+        }
+    }
+    .sub-signup{
+        margin-top: -35px;
+    }
+    .sub-forgot{
+        margin-top: -10px;
+    }
+    .social-title {
+        margin: 50px 0 20px 0;
+        font-size: 20px;
+        text-align: center;
+        font-family: 'Dancing Script', cursive;
+        color: rgb(100,100,100);
+    }
+    .social {
+        display: flex;
+        flex-direction: row;
+        .social-btn{
+            padding: 15px;
+            text-align: center;
+            border-radius: 200px;
+            font-size: 20px;
+            margin: 0 7px;
+            border: none;
+            cursor: pointer;
+            &:focus{
+                outline: none;
+            }
+            &:hover{
+                opacity: .7;
+            }
+        }
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+            padding: 15px 20px;
+          }
+          
+          .fa-twitter {
+            background: #55ACEE;
+            color: white;
+            padding: 15px 16px;
+
+          }
+          
+          .fa-google {
+            background: #dd4b39;
+            color: white;
+            padding: 15px 17px;
+
+          }
+    }
+}
