@@ -1,8 +1,8 @@
 import React from 'react';
 import './main-items-list.styles.scss';
-
-const MainItemsList = ({urlImage,urlLink,title}) => (
-    <div className='sub_mainItems'>
+import {withRouter} from 'react-router-dom';
+const MainItemsList = ({urlImage,linkUrl,title,history,match}) => (
+    <div className='sub_mainItems' onClick={()=> history.push(`${match.url}${linkUrl}`)}>
          <div className='sub_box'>
             <img src={urlImage} className='subImage'/>
             <div className='box_opacity'></div>
@@ -11,4 +11,4 @@ const MainItemsList = ({urlImage,urlLink,title}) => (
     </div>
 )
 
-export default MainItemsList;
+export default withRouter(MainItemsList);

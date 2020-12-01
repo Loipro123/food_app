@@ -5,11 +5,15 @@ import {ReactComponent as UpArrow} from '../../icon/up-arrow.svg';
 import {connect} from 'react-redux';
 import {ToogleSidebar} from '../../redux/sidebar/sidebar.action';
 import SidebarSub from '../sibbar-sub/sidebar-sub.component';
-const SidebarHeader = ({item,tooggleBar}) => {
-    const {title,items,id,hidden} = item;
+import {withRouter} from 'react-router-dom';
+const SidebarHeader = ({item,tooggleBar,history}) => {
+    const {title,items,id,hidden,linkUrl} = item;
     return(
     <div className='side'>
-         <div className='title-bar' onClick={()=> {tooggleBar(id)}}>
+         <div className='title-bar' onClick={()=> {
+             tooggleBar(id)
+             history.push(`/${linkUrl}`)
+        }}>
             <span className='title'>{title}</span>
             {hidden ? <DownArrow className='title-icon'/>: <UpArrow className='title-icon'/>}
          </div>
@@ -22,4 +26,4 @@ const SidebarHeader = ({item,tooggleBar}) => {
 const mapDispatchToProps = dispatch => ({
     tooggleBar: itemId => dispatch(ToogleSidebar(itemId))
 })
-export default connect(null,mapDispatchToProps)(SidebarHeader);
+export default withRouter(connect(null,mapDispatchToProps)(SidebarHeader));

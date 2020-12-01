@@ -8,6 +8,8 @@ import SidebarHeader from './component/sidebar-header/sidebar-header.component';
 import Login from './component/login/login.component';
 import SignUp from './component/sign-up/sign-up.component';
 import MainPage from './page/main-page/main-page.component';
+import FoodList from './page/food-list/food-list.component';
+import MainFoodList from './page/mainfood-list/mainfood-list.component';
 const App = ({menuCollections}) =>{
   return (
     <div className="App">
@@ -20,9 +22,11 @@ const App = ({menuCollections}) =>{
          </div>
          <div className='mainbar'>
              <Switch>
-               <Route path='/login' component={Login}/>
-               <Route path='/signup' component={SignUp}/>
-               <Route path='/' component={MainPage}/>
+               <Route exact path='/login' component={Login}/>
+               <Route exact path='/signup' component={SignUp}/>
+               <Route exact path='/:mainfoodId/:subfoodId' component={FoodList}/>
+               <Route exact path='/:mainfoodId' component={MainFoodList}/>
+               <Route exact path='/' component={MainPage}/>
              </Switch>
          </div>
       </div>

@@ -1,9 +1,10 @@
 import React from 'react';
 import './main-items.styles.scss';
 import MainItemsList from '../main-items-list/main-items-list.component';
-const MainItems = ({title,items}) => (
+import {withRouter} from 'react-router-dom';
+const MainItems = ({title,items,linkUrl,history}) => (
     <div className='main_items'> 
-        <h3 className='main_title'>
+        <h3 className='main_title' onClick={()=> history.push(`/${linkUrl}`)}>
             {title}
         </h3>
         <div className='main_item'>
@@ -14,4 +15,4 @@ const MainItems = ({title,items}) => (
     </div>
 )
 
-export default MainItems;
+export default withRouter(MainItems);

@@ -1,21 +1,18 @@
-.main_items {
-    display: flex;
-    flex-direction: column;
-    padding: 0 50px 0 0;
-    .main_title{
+.subfood_list {
+    font-family: 'Dancing Script', cursive;
+    padding: 10px 40px;
+    color: black;
+    .sub_title {
         font-size: 25px;
         font-weight: lighter;
         padding: 20px 0;
         border-bottom: 1px solid #E5E5E5;
-        margin-bottom: 50px;
-        cursor: pointer;
     }
-    .main_item{
+    .subItems_list{
+        margin-top: 30px;
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
         justify-content: space-between;
-       
     }
-    
 }
