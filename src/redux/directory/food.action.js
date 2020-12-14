@@ -7,3 +7,8 @@ export const AccesSubFood = (mainfoodId,subfoodId) => ({
         subfoodId
     }
 })
+
+export const ProductAccess = (item) => ({
+    type: foodActionTypes.PRODUCT_ACTION,
+    payload: item
+})

@@ -1,0 +1,24 @@
+.bar_star_main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    font-family: 'Dancing Script', cursive;
+
+    .bar_star_body{
+        height: 17px;
+        width: 65%;
+        background-color: rgb(204,204,204);
+    }
+    .bar_star_title{
+        font-size: 20px;
+        cursor: pointer;
+        width: 15%;
+        
+    }
+    .bar_star_number{
+        width: 10%;
+        text-align: end;
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,71 @@
+.star{
+    padding: 5px;
+    transition: all 1.2s;
+    color: rgb(204,204,204);
+    .checked{
+      color: rgb(0,0,0);
+    }
+    .fa-star{
+        margin-left: 5px;
+    }
+}
+.star_count{
+    text-align: end;
+    color: rgb(36,32,33);
+    font-size: 16px;
+    padding-right: 8px;
+    margin-top: -5px;
+}
+
+.star_card {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    opacity: 0;
+    bottom: 0;
+    right: 0;
+    padding: 5px;
+}
+
+.product_star{
+    display: flex;
+    flex-direction: column;
+    .star{
+        .fa-star{
+            font-size: 20px;
+        }
+    }
+
+}
+
+.product_review_star{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Dancing Script', cursive;
+    padding: 0;
+    margin-bottom: 40px;
+    .star{
+        padding: 0;
+        .fa-star{
+            font-size: 45px;
+        }
+    }
+    .star_count{
+        font-size: 20px;
+        padding: 0;
+    }
+}
+
+.feedback_customer_review{
+    .star{
+        padding: 0;
+        .fa-star{
+            font-size: 20px;
+        }
+    }
+    .star_count{
+        display: none;
+    }
+}

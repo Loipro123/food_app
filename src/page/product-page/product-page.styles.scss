@@ -1,0 +1,51 @@
+.product_page{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    .product_main{
+        display: flex;
+        flex-direction: row;
+        .product_image{
+            width: 65%;
+            height: 60vh;
+            background-position: center;
+            background-size: cover;
+        }
+    }
+    .product_review{
+        padding-top: 50px;
+        .product_review_header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 50px;
+            .review_header_left{
+                height: 2px;
+                background-color: rgb(222,223,224);
+                width: 44%;
+            }
+            .review_header_title{
+                font-family: 'Dancing Script', cursive;
+                font-size: 25px;
+            }
+        }
+       .product_review_main{
+            display: flex;
+            .product_review_feedback{
+                width: 50%;
+            }
+            .product_review_button{
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+            }
+       }
+       .product_review_customer{
+           font-size: 25px;
+           font-family: 'Dancing Script', cursive;   
+           font-weight: lighter;
+           margin: 60px 0 20px 0;
+        }
+    }
+}

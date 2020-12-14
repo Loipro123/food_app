@@ -21,3 +21,8 @@ export const mainfoodSelector = (mainfoodId) => (
         })
     )
 )
+
+export const productSelector = createSelector(
+    [mainDataSelector],
+    mainData => mainData.product
+)

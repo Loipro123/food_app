@@ -1,0 +1,23 @@
+.product_detail{
+    padding: 10px 0;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+    &:hover .product_detail_content {
+        transform: translateX(-7px);
+        transition: all .5s;
+    }
+    .product_detail_content{
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        transition: all .5s;
+        .product_detail_title{
+            font-size: 25px;
+            margin-left: 15px;
+        }
+        .product_detail_arrow{
+            font-size: 17px;
+            color: black;
+        }
+    }
+}

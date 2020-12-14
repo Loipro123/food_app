@@ -1,0 +1,11 @@
+.quantity{
+    display: flex;
+    font-size: 20px;
+    .arrow{
+        cursor: pointer;
+    }
+    .value{
+        margin: 0 15px;
+
+    }
+}

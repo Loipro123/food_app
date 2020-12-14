@@ -2,13 +2,14 @@ import React from 'react';
 import './sidebar-sub.styles.scss';
 import {ReactComponent as Target} from '../../icon/target.svg';
 import {connect} from 'react-redux';
-import {FocusSidebar} from '../../redux/sidebar/sidebar.action';
+// import {FocusSidebar} from '../../redux/sidebar/sidebar.action';
 import {withRouter} from 'react-router-dom';
 const SidebarSub = ({item,title,forcusSidebar,history}) => {
     const {name,id,forcus,linkUrl} = item;
     return (
         <div className={`${forcus===true ? 'changeBack ': null} sidebar-sub`} onClick={()=> 
-           { forcusSidebar(id,title)
+           { 
+            //    forcusSidebar(id,title)
             history.push(`/${linkUrl}`)}
         }
         
@@ -19,7 +20,7 @@ const SidebarSub = ({item,title,forcusSidebar,history}) => {
     )
 }
 
-const mapDispatchToProps = (dispatch) => ({
-    forcusSidebar: (itemId,itemName) => dispatch(FocusSidebar(itemId,itemName))
-})
-export default withRouter(connect(null,mapDispatchToProps)(SidebarSub));
+// const mapDispatchToProps = (dispatch) => ({
+//     forcusSidebar: (itemId,itemName) => dispatch(FocusSidebar(itemId,itemName))
+// })
+export default withRouter(connect(null,null)(SidebarSub));

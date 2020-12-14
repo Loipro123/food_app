@@ -1,0 +1,21 @@
+.customer_review{
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgb(222,223,224);
+    padding: 20px 0;
+    height: 180px;
+    font-family: 'Montserrat', sans-serif;
+    .customer_review_name{
+        font-size: 23px;
+        padding: 10px 0 5px 7px ;
+    }
+
+    .customer_review_date{
+        font-size: 17px;
+        padding: 0 0 20px 7px;
+    }
+    .customer_review_comment{
+        font-size: 17px;
+        padding-left: 7px;
+    }
+ }

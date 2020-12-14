@@ -1,22 +1,61 @@
 .card_item{
   display: flex;
   width: 30%;
+  margin-left: 2.5%;
   height: 330px;
   flex-direction: column;
   margin-bottom: 40px;
-  .card_background{
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  .background_box{
     width: 100%;
-    height: 95%;
+    height: 90%;
+    display: flex;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    .card_background{
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      transition: all 1s;
+      &:hover{
+        opacity: .5;
+        transform: scale(1.1);
+        transition: all 1s;
+    }
+    
+  
+      
+  }
+  &:hover .star_card{
+      
+    transition: all 1.2s;
+    opacity: 1;
+  }
+  
+  &:hover .order{
+    opacity: .7;
+  }
+    
+  
+   
  }
  .card_footer {
-     height: 5%;
+     height: 10%;
      padding: 10px 0;
      display: flex;
      flex-direction: row;
      justify-content: space-between;
      font-size: 20px;
+     font-family: 'Dancing Script', cursive;
+
  }
 }
+
+
+
