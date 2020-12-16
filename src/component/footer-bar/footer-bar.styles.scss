@@ -1,0 +1,21 @@
+.footer_bar{
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    width: 18%;
+    align-self: center;
+    font-family: 'Dancing Script', cursive;
+    .footer_bar_title{
+        font-size: 25px;
+    }
+    .footer_bar_subtitle{
+        font-size: 20px;
+        margin-top: 8px;
+        cursor: pointer;
+        transition: all .5s;
+        &:hover{
+            color:  rgb(178, 183, 189);
+            transform: scale(1.1);;
+        }
+    }
+}

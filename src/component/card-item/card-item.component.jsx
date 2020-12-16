@@ -43,4 +43,6 @@ const CardItem = ({urlImage,urlLink,title,price,accessProduct,history}) => {
 const mapDispatchToProps = dispatch => ({
     accessProduct: items => dispatch(ProductAccess(items))
 })
+
+
 export default withRouter(connect(null,mapDispatchToProps)(CardItem));

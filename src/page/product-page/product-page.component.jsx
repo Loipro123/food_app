@@ -7,10 +7,24 @@ import ProductInformation from '../../component/product-information/product-info
 import FeedbackStar from '../../component/feedback-star/feedback-star.component';
 import BarStar from '../../component/bar-star/bar-star.component';
 import CustomButton from '../../component/custom-button/custom-button.component';
-import CustomerReview from '../../component/customer-review/customer-review.component'
-const ProductPage = ({item}) => {
-    const {urlImage,price,title} = item
+import CustomerReview from '../../component/customer-review/customer-review.component';
+import ProductHeader from '../../component/product-header/product_header.component';
+import {slideSelector} from '../../redux/product/product.selector';
+import {productAccess,resetSlide} from '../../redux/product/product.action';
+import SlideShow from '../../component/slide-show/slide-show.component';
+class ProductPage extends React.Component  {
+     mySlide = null
+    componentWillMount() {
+         this.mySlide = setInterval(this.props.slideAccess,5000);
+      }
+    
+    componentWillUnmount() {
+        this.props.resetValue();
+        clearInterval(this.mySlide);
+    }
+   render(){
 
+    const {urlImage,price,title} = this.props.item;
     return (
         <div className='product_page'>
             <div className='product_main'>
@@ -23,12 +37,14 @@ const ProductPage = ({item}) => {
                     <ProductInformation price={price} title={title}/>
                 }
             </div>
+            <ProductHeader title='Favorite foods'/>
+            <div className='slideshow'>
+                {
+                    this.props.slide.map(({id,...otherProps}) => <SlideShow key={id} {...otherProps}/>)
+                }
+            </div>
+            <ProductHeader title='Reviews'/>
             <div className='product_review'>
-                <div className='product_review_header'>
-                      <div className='review_header_left'></div>
-                      <span className='review_header_title'>Review</span>
-                      <div className='review_header_left'></div>
-                </div>
                 <div className='product_review_main'>
                     <div className='product_review_feedback'>
                             <FeedbackStar type='product_review_star'/>
@@ -45,18 +61,22 @@ const ProductPage = ({item}) => {
                 <h3 className='product_review_customer'>
                     100 Customer Reviews
                 </h3>
-                <CustomerReview name='Loi Le' date='12-20-2020' comment='This is the best food I ever tried'/>
-                <CustomerReview name='Loi Le' date='12-20-2020' comment='This is the best food I ever tried'/>
-                <CustomerReview name='Loi Le' date='12-20-2020' comment='This is the best food I ever tried'/>
-                <CustomerReview name='Loi Le' date='12-20-2020' comment='This is the best food I ever tried'/>
+                <CustomerReview name='Down Le' date='12-20-2020' comment='This is the best food I ever tried'/>
+                <CustomerReview name='John Lee' date='13-20-2020' comment="I'm either an L or XL because of large chest. An L in this sweater gave me plenty of room. It's so pretty in blue. It's a thick sweater so you will stay warm wearing it. It's an eye catcher so prepare for compliments."/>
 
             </div>
         </div>
     )
+   }
 }
 
 const mapStateToProps = createStructuredSelector({
-    item: productSelector
+    item: productSelector,
+    slide: slideSelector
 })
 
-export default connect(mapStateToProps)(ProductPage);
+const mapDispatchToProps = dispatch => ({
+    slideAccess: () => dispatch(productAccess()),
+    resetValue: () => dispatch(resetSlide())
+})
+export default connect(mapStateToProps,mapDispatchToProps)(ProductPage);

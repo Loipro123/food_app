@@ -1,0 +1,24 @@
+.slideshow_main{
+    display: flex;
+    width: 20%;
+    height: 120px;
+    flex-direction: column;
+    font-family: 'Dancing Script', cursive;
+    transition: all 1s;
+    cursor: pointer;
+    .slideshow_body{
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 80%;
+    }
+    .slideshow_footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .slideshow_title{
+            font-size: 15px;
+            margin-top: 5px;
+        }
+    }
+}

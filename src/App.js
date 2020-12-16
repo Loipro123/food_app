@@ -12,6 +12,7 @@ import FoodList from './page/food-list/food-list.component';
 import MainFoodList from './page/mainfood-list/mainfood-list.component';
 import Search from './page/search/search.component';
 import ProductPage from './page/product-page/product-page.component';
+import Footer from './page/footer/footer.component';
 const App = ({menuCollections}) =>{
   return (
     <div className="App">
@@ -23,15 +24,18 @@ const App = ({menuCollections}) =>{
                ))}
          </div>
          <div className='mainbar'>
-             <Switch>
-               <Route exact path='/login' component={Login}/>
-               <Route exact path='/signup' component={SignUp}/>
-               <Route exact path='/:mainfoodId/:subfoodId' component={FoodList}/>
-               <Route exact path='/:mainfoodId/:subfoodId/:productName' component={ProductPage}/>
-               <Route exact path='/search' component={Search}/>
-               <Route exact path='/:mainfoodId' component={MainFoodList}/>
-               <Route exact path='/' component={MainPage}/>
-             </Switch>
+           <div className='mainbar_body'>
+              <Switch>
+                  <Route exact path='/login' component={Login}/>
+                  <Route exact path='/signup' component={SignUp}/>
+                  <Route exact path='/:mainfoodId/:subfoodId' component={FoodList}/>
+                  <Route exact path='/:mainfoodId/:subfoodId/:productName' component={ProductPage}/>
+                  <Route exact path='/search' component={Search}/>
+                  <Route exact path='/:mainfoodId' component={MainFoodList}/>
+                  <Route exact path='/' component={MainPage}/>
+                </Switch>
+           </div>
+           <Footer/>
          </div>
       </div>
     </div>

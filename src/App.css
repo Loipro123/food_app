@@ -17,8 +17,11 @@
   overflow: scroll;
 }
 .mainbar {
-  padding: 20px ;
   flex: 0 0 80%;
   background-color: rgb(255,255,255);
   overflow: scroll;
+}
+
+.mainbar_body{
+  min-height: calc(96vh - 400px);
 }
