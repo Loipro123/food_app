@@ -17,7 +17,6 @@ const Login = () => (
              <button className='social-btn fa fa-facebook'></button>
              <button className='social-btn fa fa-twitter'></button>
              <button className='social-btn fa fa-google'></button>
-
        </div>
     </div>
 );

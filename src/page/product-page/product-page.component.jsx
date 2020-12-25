@@ -34,7 +34,7 @@ class ProductPage extends React.Component  {
                     }
                 }></div>
                 {
-                    <ProductInformation price={price} title={title}/>
+                    <ProductInformation item={this.props.item}/>
                 }
             </div>
             <ProductHeader title='Favorite foods'/>

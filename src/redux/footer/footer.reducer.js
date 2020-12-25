@@ -5,19 +5,19 @@ const INITIAL_DATA = {
             title: 'About',
             items: [
                 {
-                    id: 1,
+                    id: 's1',
                     name: 'Home'
                 },
                 {
-                    id: 2,
+                    id: 's2',
                     name: 'Service'
                 },
                 {
-                    id: 3,
+                    id: 's3',
                     name: 'Event'
                 },
                 {
-                    id: 4,
+                    id: 's4',
                     name: 'Help'
                 }
             ]
@@ -27,37 +27,37 @@ const INITIAL_DATA = {
             title: 'Product',
             items: [
                 {
-                    id: 1,
+                    id: 's5',
                     name: 'Main Food'
                 },
                 {
-                    id: 2,
+                    id: 's6',
                     name: 'Light Food'
                 },
                 {
-                    id: 3,
+                    id: 's7',
                     name: 'Drink'
                 },
                 {
-                    id: 4,
+                    id: 's8',
                     name: 'Cake'
                 }
             ]
         },
         {
-            id: 4,
+            id: 3,
             title: 'Contact',
             items: [
                 {
-                    id: 1,
+                    id: 's9',
                     name: 'Phone'
                 },
                 {
-                    id: 2,
+                    id: 's10',
                     name: 'Email'
                 },
                 {
-                    id: 2,
+                    id: 's11',
                     name: 'Social'
                 }
                

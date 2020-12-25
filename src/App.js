@@ -13,7 +13,9 @@ import MainFoodList from './page/mainfood-list/mainfood-list.component';
 import Search from './page/search/search.component';
 import ProductPage from './page/product-page/product-page.component';
 import Footer from './page/footer/footer.component';
-const App = ({menuCollections}) =>{
+import PopupProduct from './page/popup-product/popup-product.component';
+import {hiddenPopupSelecter} from './redux/pop-up/pop-up.selector';
+const App = ({menuCollections,popupHidden}) =>{
   return (
     <div className="App">
       <Header/>
@@ -38,12 +40,16 @@ const App = ({menuCollections}) =>{
            <Footer/>
          </div>
       </div>
+      {
+        popupHidden=== true ? <PopupProduct/> : null
+      }
     </div>
   );
 }
 
 const mapStateToProps = createStructuredSelector({
-  menuCollections: list_foodSelector
+  menuCollections: list_foodSelector,
+  popupHidden: hiddenPopupSelecter
 })
 
 export default connect(mapStateToProps)(App);

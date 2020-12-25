@@ -1,10 +1,12 @@
 import React from 'react';
 import './product-information.styles.scss';
+import {connect} from 'react-redux';
 import FeedbackStar from '../feedback-star/feedback-star.component';
 import RadioButton from '../radio-button/radio-button.component';
 import ProductQuantity from '../product-quantity/product-quantity.component';
 import CustomButton from '../custom-button/custom-button.component';
 import ProductDetail from '../product-detail/product-detail.component';
+import {openPopup} from '../../redux/pop-up/pop-up.action';
 class ProductInformation extends React.Component {
     constructor(props){
         super(props);
@@ -23,9 +25,9 @@ class ProductInformation extends React.Component {
         return (
             <div className='product_information'>
                 <div className='product_intro'>
-                    <h3 className='product_title'>{this.props.title}</h3>
+                    <h3 className='product_title'>{this.props.item.title}</h3>
                     <div className='product_spec'>
-                        <span className='product_price'>${this.props.price}</span>
+                        <span className='product_price'>${this.props.item.price}</span>
                         {
                             <FeedbackStar type='product_star'/>
                         }
@@ -54,7 +56,9 @@ class ProductInformation extends React.Component {
                              <ProductQuantity quantity= '1'/>
                         </div>
                 </div>
-                <CustomButton type='option_button'>Add to Bag</CustomButton>
+                <CustomButton type='option_button' onClick={ () => { 
+                    this.props.open_popup(this.props.item)
+                }}>Add to Bag</CustomButton>
                 <ProductDetail title='Product details'/>
                 <ProductDetail title='Product notes'/>
             </div>
@@ -62,4 +66,7 @@ class ProductInformation extends React.Component {
     }
 };
 
-export default ProductInformation;
+const mapDispatchToProps = dispatch => ({
+    open_popup: (item) => dispatch(openPopup(item))
+})
+export default connect(null,mapDispatchToProps)(ProductInformation);
