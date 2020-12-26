@@ -12,3 +12,16 @@ export const closePopup = () => {
         type: popupTypesAction.CLOSE_ACTION
     }
 }
+
+export const openComment = (item) => {
+    return {
+        type: popupTypesAction.OPEN_COMMENT_ACTION,
+        payload: item
+    }
+}
+
+export const closeComment = () => {
+    return {
+        type: popupTypesAction.CLOSE_COMMENT_ACTION
+    }
+}

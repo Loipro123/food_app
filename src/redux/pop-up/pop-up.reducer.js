@@ -2,10 +2,11 @@ import {popupTypesAction} from './pop-up.types';
 const INITIAL_DATA = {
     product_pop: {
         hidden: false,
-        propduct: null
+        product: null
     },
     comment_pop:  {
-        hidden:false
+        hidden:false,
+        product: null
     }
 }
 
@@ -16,7 +17,7 @@ export const popupReducer = (state=INITIAL_DATA,action) => {
                 ...state,
                 product_pop:{
                     hidden: true,
-                    propduct: action.payload
+                    product: action.payload
                 }
             }
         case popupTypesAction.CLOSE_ACTION: 
@@ -27,6 +28,22 @@ export const popupReducer = (state=INITIAL_DATA,action) => {
                      propduct: null
                  }
              }
+        case popupTypesAction.OPEN_COMMENT_ACTION:
+            return{
+                    ...state,
+                    comment_pop:{
+                        hidden: true,
+                        product: action.payload
+                    }
+                }
+        case popupTypesAction.CLOSE_COMMENT_ACTION: 
+            return {
+                     ...state,
+                     comment_pop: {
+                         hidden: false,
+                         propduct: null
+                     }
+                 }
         default:
             return {
                 ...state

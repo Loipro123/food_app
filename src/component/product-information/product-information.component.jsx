@@ -67,6 +67,6 @@ class ProductInformation extends React.Component {
 };
 
 const mapDispatchToProps = dispatch => ({
-    open_popup: (item) => dispatch(openPopup(item))
+    open_popup: (item) => dispatch(openPopup(item)),
 })
 export default connect(null,mapDispatchToProps)(ProductInformation);

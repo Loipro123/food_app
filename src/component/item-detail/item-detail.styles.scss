@@ -1,0 +1,35 @@
+.item_detail{
+    display: flex;
+    margin: 20px 10px 0 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(222,223,224);
+    .itemImage_box{
+        flex: 0 0 50%;
+        padding: 0 10px ;
+        .item_image{
+            height: 150px;
+            width: 100%;
+        }
+    }
+    .item_info{
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 50%;
+        justify-content: space-around;
+        margin-left: 15px;
+        .item_title{
+           font-family: 'Dancing Script', cursive;
+           font-size: 27px;
+           margin-bottom: 20px;
+        }
+        .item_column{
+            display: flex;
+            font-size: 18px;
+            font-family: 'Dancing Script', cursive;
+            .item_column_text{
+                flex: 0 0 50%;
+                justify-self: start;
+            }
+        }
+    }
+}

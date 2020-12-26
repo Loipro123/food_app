@@ -12,6 +12,8 @@ import ProductHeader from '../../component/product-header/product_header.compone
 import {slideSelector} from '../../redux/product/product.selector';
 import {productAccess,resetSlide} from '../../redux/product/product.action';
 import SlideShow from '../../component/slide-show/slide-show.component';
+import {openComment} from '../../redux/pop-up/pop-up.action';
+
 class ProductPage extends React.Component  {
      mySlide = null
     componentWillMount() {
@@ -55,7 +57,7 @@ class ProductPage extends React.Component  {
                             <BarStar title='1 stars' percent='1%' number='1'/>
                     </div>
                     <div className='product_review_button'>
-                            <CustomButton type='product_review_btn'>Write a review</CustomButton>
+                            <CustomButton type='product_review_btn' onClick={()=> {this.props.open_comment(this.props.item)}}>Write a review</CustomButton>
                     </div>
                 </div>
                 <h3 className='product_review_customer'>
@@ -77,6 +79,7 @@ const mapStateToProps = createStructuredSelector({
 
 const mapDispatchToProps = dispatch => ({
     slideAccess: () => dispatch(productAccess()),
-    resetValue: () => dispatch(resetSlide())
+    resetValue: () => dispatch(resetSlide()),
+    open_comment: (item) => dispatch(openComment(item))
 })
 export default connect(mapStateToProps,mapDispatchToProps)(ProductPage);

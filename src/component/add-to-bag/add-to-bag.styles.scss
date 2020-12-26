@@ -1,17 +1,18 @@
 .add_to_bag{
-    height: 380px;
-    width: 40vw;
+    width: 30vw;
     background-color: white;
     display: flex;
     flex-direction: column;
-    .bag_close{
-        font-size: 35px;
-        color: rgb(153,153,153);
-        margin-right: 17px;
-        align-self: flex-end;
-        cursor: pointer;
-        &:hover{
-            color: black;
-        }
-    }
+    padding-bottom: 10px;
+    border-radius: 5px;
+     .add_bag_footer{
+         padding: 10px;
+         display: flex;
+         flex-direction: column;
+         .add_bag_btn{
+            margin-top: 20px;
+             display: flex;
+             justify-content: space-around;
+         }
+     }
 }
