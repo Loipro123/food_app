@@ -8,13 +8,14 @@ import ItemDetail from '../../component/item-detail/item-detail.component';
 import TotalAmount from '../total-amount/total-amount.component';
 import CustomButton from '../custom-button/custom-button.component';
 import PopupHeader from '../popup-header/popup-header.component';
-const AddToBag = ({close_popup,product}) => {
+import {amountCartList,priceCartList} from '../../redux/cart/cart.selector';
+const AddToBag = ({close_popup,product,price,amount}) => {
     return (
     <div className='add_to_bag'>
         <PopupHeader title='Added To Your Bag' handleClick = { ()=> {close_popup()}}/>
         <ItemDetail item={product}/>
         <div className='add_bag_footer'>
-             <TotalAmount amount='3' price='120.00'/>
+             <TotalAmount amount={amount} price={price}/>
              <div className='add_bag_btn'>
                    <CustomButton type='keep'>Keep Shopping</CustomButton>
                    <CustomButton type='check'>Check Out</CustomButton>
@@ -28,6 +29,8 @@ const mapDispatchToProps = dispatch => ({
     close_popup: () => dispatch(closePopup())
 })
 const mapStateToProps = createStructuredSelector({
-    product: productPopupSelecter
+    product: productPopupSelecter,
+    amount: amountCartList,
+    price: priceCartList
 })
 export default connect(mapStateToProps,mapDispatchToProps)(AddToBag);

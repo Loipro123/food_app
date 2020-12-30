@@ -1,7 +1,7 @@
 import React from 'react';
 import './item-detail.styles.scss';
 
-const ItemDetail = ({item: {urlImage,price,title}}) => (
+const ItemDetail = ({item: {urlImage,price,title,amount,valueRadio}}) => (
     <div className='item_detail'>
         <div className='itemImage_box'>
              <img src={urlImage} alt={title} className='item_image'/>
@@ -14,11 +14,11 @@ const ItemDetail = ({item: {urlImage,price,title}}) => (
              </div>
              <div className='item_column'>
                   <span className='item_column_text'>Size :</span>
-                  <span className='item_column_text'>Large</span>
+                  <span className='item_column_text'>{valueRadio}</span>
              </div>
              <div className='item_column'>
                   <span className='item_column_text'>Quantity :</span>
-                  <span className='item_column_text'>3</span>
+                  <span className='item_column_text'>{amount}</span>
              </div>
         </div>
     </div>

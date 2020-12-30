@@ -5,9 +5,23 @@ import {createStructuredSelector} from 'reselect';
 import {productCommentSelecter} from '../../redux/pop-up/pop-up.selector';
 import {closeComment} from '../../redux/pop-up/pop-up.action';
 import PopupHeader from '../popup-header/popup-header.component';
+import FeedbackStar from '../feedback-star/feedback-star.component';
+import CustomButton from '../custom-button/custom-button.component';
 const WriteComment = ({product,close_comment}) => (
     <div className='write_comment'>
-        <PopupHeader title='Write A Review' handleClick={()=> {close_comment()}}/>
+        <PopupHeader title='Write a Review' handleClick={()=> {close_comment()}}/>
+        <div className='write_body'>
+            <div className='image_box'>
+                <img src={product.urlImage} alt={product.title} className='img_main'/>
+                <span className='image_title'>{product.title}</span>
+            </div>
+            <FeedbackStar type='review_star'/>
+            <div className='review_detail'>
+                <span>Customer Name: Loi Le</span>
+                <textarea placeholder="Write review here!" className='review_are'/>
+            </div>
+            <CustomButton type='check'>Submit Review</CustomButton>
+        </div>
     </div>
 )
 

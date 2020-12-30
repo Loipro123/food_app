@@ -6,6 +6,8 @@ import {searchReducer} from './search/search.reducer';
 import {productReducer} from './product/product.reducer';
 import {footerReducer} from './footer/footer.reducer';
 import {popupReducer} from './pop-up/pop-up.reducer';
+import { cartReducer } from './cart/cart.reducer';
+
 const rootReducer = combineReducers({
     sidebar: sibebarReducer,
     mainData: mainReducer,
@@ -13,7 +15,8 @@ const rootReducer = combineReducers({
     search: searchReducer,
     product: productReducer,
     footer: footerReducer,
-    popup: popupReducer
+    popup: popupReducer,
+    cart:cartReducer
 });
 
 export default rootReducer;

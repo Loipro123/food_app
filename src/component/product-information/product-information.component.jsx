@@ -7,11 +7,14 @@ import ProductQuantity from '../product-quantity/product-quantity.component';
 import CustomButton from '../custom-button/custom-button.component';
 import ProductDetail from '../product-detail/product-detail.component';
 import {openPopup} from '../../redux/pop-up/pop-up.action';
+import {addToBag} from '../../redux/cart/cart.action';
+
 class ProductInformation extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            valueRadio: 'Large'
+            valueRadio: 'Large',
+            amount: 1
         }
     }
     radioChangeHandler = (event) => {
@@ -20,6 +23,18 @@ class ProductInformation extends React.Component {
             valueRadio : event.target.value
         })
         
+    }
+    increaseClick = () => {
+        this.setState((preState) => ({
+            amount: preState.amount +1
+        }))
+    }
+    decreaseClick = () => {
+        if(this.state.amount>1){
+            this.setState((preState) => ({
+                amount: preState.amount -1
+            }))
+        }   
     }
     render(){
         return (
@@ -53,11 +68,12 @@ class ProductInformation extends React.Component {
                         </div>
                         <div className='product_option_amount'>
                              <span className='product_option_title'>Quantity</span>
-                             <ProductQuantity quantity= '1'/>
+                             <ProductQuantity quantity= {this.state.amount} increase={this.increaseClick} decrease={this.decreaseClick}/>
                         </div>
                 </div>
                 <CustomButton type='option_button' onClick={ () => { 
-                    this.props.open_popup(this.props.item)
+                    this.props.add_product({...this.props.item,...this.state})
+                    this.props.open_popup({...this.props.item,...this.state})
                 }}>Add to Bag</CustomButton>
                 <ProductDetail title='Product details'/>
                 <ProductDetail title='Product notes'/>
@@ -68,5 +84,6 @@ class ProductInformation extends React.Component {
 
 const mapDispatchToProps = dispatch => ({
     open_popup: (item) => dispatch(openPopup(item)),
+    add_product: (item) => dispatch(addToBag(item))
 })
 export default connect(null,mapDispatchToProps)(ProductInformation);

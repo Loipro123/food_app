@@ -1,11 +1,11 @@
 import React from 'react';
 import './product-quantity.styles.scss';
 
-const ProductQuantity = ({quantity}) => (
+const ProductQuantity = ({quantity,decrease,increase}) => (
     <div className='quantity'>
-        <div className='arrow'>&#10094;</div>
+        <div className='arrow' onClick={decrease}>&#10094;</div>
         <span className='value'>{quantity}</span>
-        <div className='arrow'>&#10095;</div>
+        <div className='arrow' onClick={increase}>&#10095;</div>
     </div>
 )
 

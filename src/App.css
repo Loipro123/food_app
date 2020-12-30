@@ -25,3 +25,6 @@
 .mainbar_body{
   min-height: calc(96vh - 400px);
 }
+.App {
+  position: relative;
+}

@@ -69,3 +69,22 @@
         display: none;
     }
 }
+
+.review_star {
+    padding: 20px 0;
+    align-self: center;
+    .star_count{
+        display: none;
+    }
+    .star{
+        padding: 0;
+        .fa-star{
+            font-size: 50px;
+            cursor: pointer;
+            color: rgb(204,204,204);
+            &:hover{
+                color: black;
+            }
+        }
+    }
+}

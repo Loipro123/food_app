@@ -16,11 +16,15 @@ import Footer from './page/footer/footer.component';
 import PopupProduct from './page/popup-product/popup-product.component';
 import PopupComment from './page/popup-comment/popup-comment.component';
 import {hiddenPopupSelecter,hiddenCommentSelecter} from './redux/pop-up/pop-up.selector';
+import {cartHiddenSelector} from './redux/cart/cart.selector';
+import CartList from './component/cart-list/cart-list.component';
 
-const App = ({menuCollections,popupHidden,popupComment}) =>{
+const App = ({menuCollections,popupHidden,popupComment,cart_hidden}) =>{
+  console.log(cart_hidden)
   return (
     <div className="App">
       <Header/>
+      {cart_hidden === true ? <CartList/> : null}
       <div className='main'>
          <div className='sidebar'>
                {menuCollections.map((item) => (
@@ -55,7 +59,8 @@ const App = ({menuCollections,popupHidden,popupComment}) =>{
 const mapStateToProps = createStructuredSelector({
   menuCollections: list_foodSelector,
   popupHidden: hiddenPopupSelecter,
-  popupComment: hiddenCommentSelecter
+  popupComment: hiddenCommentSelecter,
+  cart_hidden: cartHiddenSelector
 })
 
 export default connect(mapStateToProps)(App);
