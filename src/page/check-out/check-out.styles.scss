@@ -1,0 +1,30 @@
+.checkout{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    font-family: 'Dancing Script', cursive;
+    .checkout_total{
+        font-size: 25px;
+        padding: 15px 25px;
+    }
+    .checkout_header{
+        display: flex;
+        justify-content: space-around;
+        font-size: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgb(222,223,224);
+        margin: 0 10px;
+        .checkout_header1{
+            flex:0 0 35%;
+            text-align: center;
+        }
+        .checkout_header2{
+            flex:0 0 30%;
+            text-align: center;
+        }
+        .checkout_header3{
+            flex:0 0 15%;
+            text-align: center;
+        }
+    }
+}

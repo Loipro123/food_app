@@ -6,13 +6,19 @@ import {connect} from 'react-redux';
 import {ProductAccess} from '../../redux/directory/food.action';
 import {withRouter} from 'react-router-dom';
 
-const CardItem = ({urlImage,urlLink,title,price,accessProduct,history}) => {
-    const item = {
-        title,
-        price,
-        urlLink,
-        urlImage
+
+const CardItem = ({item,accessProduct,history}) => {
+    const guid = () => {
+        let s4 = () => {
+            return Math.floor((1 + Math.random()) * 0x10000)
+                .toString(16)
+                .substring(1);
+        }
+        //return id of format 'aaaaaaaa'-'aaaa'-'aaaa'-'aaaa'-'aaaaaaaaaaaa'
+        return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
     }
+    const itemPass = {...item, id: guid()}
+    const {urlImage,urlLink,title,price} = item;
     const handleClick = (item) => {
         accessProduct(item)
         history.push(`/${urlLink}`)
@@ -29,7 +35,7 @@ const CardItem = ({urlImage,urlLink,title,price,accessProduct,history}) => {
                 {
                     <FeedbackStar type='star_card'/>
                 }
-                <CustomButton type='order' className='main_order' onClick={()=> handleClick(item)}>Order</CustomButton>
+                <CustomButton type='order' className='main_order' onClick={()=> handleClick(itemPass)}>Order</CustomButton>
             </div>
     
            <div className='card_footer'>

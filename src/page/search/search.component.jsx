@@ -13,7 +13,7 @@ class Search extends React.Component {
         return (
             <div className='search_page'>
                {
-                   this.props.arraySearch.length      > 0 ? (this.props.arraySearch.map(({id,...otherProps}) => <CartItem id={id} {...otherProps}/>)):
+                   this.props.arraySearch.length      > 0 ? (this.props.arraySearch.map((item) => <CartItem id={item.id} item={item}/>)):
                    (<h2 className='searchStatus'>There is no items matched</h2>)
                
                }

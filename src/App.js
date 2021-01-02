@@ -15,12 +15,12 @@ import ProductPage from './page/product-page/product-page.component';
 import Footer from './page/footer/footer.component';
 import PopupProduct from './page/popup-product/popup-product.component';
 import PopupComment from './page/popup-comment/popup-comment.component';
+import CheckOut from './page/check-out/check-out.component';
 import {hiddenPopupSelecter,hiddenCommentSelecter} from './redux/pop-up/pop-up.selector';
 import {cartHiddenSelector} from './redux/cart/cart.selector';
 import CartList from './component/cart-list/cart-list.component';
 
 const App = ({menuCollections,popupHidden,popupComment,cart_hidden}) =>{
-  console.log(cart_hidden)
   return (
     <div className="App">
       <Header/>
@@ -39,6 +39,7 @@ const App = ({menuCollections,popupHidden,popupComment,cart_hidden}) =>{
                   <Route exact path='/:mainfoodId/:subfoodId' component={FoodList}/>
                   <Route exact path='/:mainfoodId/:subfoodId/:productName' component={ProductPage}/>
                   <Route exact path='/search' component={Search}/>
+                  <Route exact path='/checkout' component={CheckOut}/>
                   <Route exact path='/:mainfoodId' component={MainFoodList}/>
                   <Route exact path='/' component={MainPage}/>
                 </Switch>

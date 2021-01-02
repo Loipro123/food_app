@@ -10,7 +10,7 @@ const FoodList = ({itemsList}) => {
        <h3 className='sub_title'>{itemsList.items.title}</h3>
        <div className='subItems_list'>
            {
-             itemsList.items.items.map(({id,...otherProps}) => <CardItem key={id} {...otherProps}/>)
+             itemsList.items.items.map((item) => <CardItem key={item.id} item={item}/>)
            }
        </div>
   </div>

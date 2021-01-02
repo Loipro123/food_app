@@ -9,7 +9,7 @@ const MainFoodList = ({itemsList}) => {
         <h1>{itemsList.title}</h1>
         <div className='subItems_list'>
             {
-              itemsList.items.map(({items}) => items.map(({id,...otherProps})=> <CartItem key={id} {...otherProps}/>))
+              itemsList.items.map(({items}) => items.map((item)=> <CartItem key={item.id} item={item}/>))
             }
         </div>
    </div>

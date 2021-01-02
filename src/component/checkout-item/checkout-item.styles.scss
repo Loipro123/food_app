@@ -1,0 +1,40 @@
+.checkout_item{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 10px;
+    .checkout_item1{
+        flex:0 0 35%;
+        justify-self: center;
+    }
+    .checkout_item2{
+        flex:0 0 30%;
+        display: flex;
+        justify-content: center;
+    }
+    .checkout_item3{
+        flex:0 0 15%;
+        text-align: center;
+        justify-self:center;
+        font-family: 'Dancing Script', cursive;
+        font-size: 23px;
+        align-items: center;
+    }
+    
+    .checkout_item4{
+        flex:0 0 15%;
+        justify-self:center;
+        font-family: 'Dancing Script', cursive;
+        font-size: 25px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        color: #EB2F64;
+        .fa{
+            margin-top: 0px;
+            cursor: pointer;
+        }
+    }
+}
