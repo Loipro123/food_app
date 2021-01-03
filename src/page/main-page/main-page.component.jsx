@@ -1,20 +1,16 @@
 import React from 'react';
 import './main-page.styles.scss';
-import {connect} from 'react-redux';
-import {createStructuredSelector} from 'reselect';
-import {select_mainData} from '../../redux/main/main.selector';
+import {main_data} from './main-page.data';
 import MainItems from '../../component/main-items/main-items.component';
 
-const MainPage = ({list_items})=> (
+const MainPage = ()=> (
     <div className='main_page'>
         <h1>Menu</h1>
         {
-            list_items.map(({id,...otherProps}) => <MainItems key={id} {...otherProps}/>)
+            main_data.map(({id,...otherProps}) => <MainItems key={id} {...otherProps}/>)
         }
     </div>
 )
 
-const mapStateToProps = createStructuredSelector({
-    list_items: select_mainData
-})
-export default connect(mapStateToProps)(MainPage);
+
+export default MainPage;

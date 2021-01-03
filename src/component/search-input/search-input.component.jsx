@@ -16,7 +16,7 @@ const SearchInput = ({changeInput,history,value}) => {
     return (
         <div className ='search'>
             <div className='form-search'>
-                 <input type='text' value={value} name='search' className='input-search' placeholder='Search food...' onChange={handleOnchange}/>
+                 <input type='text' value={value} name='search' className='input-search' placeholder='Search food...' onChange={handleOnchange} autoComplete="off"/>
                  <Search className='icon-search'/>
             </div>
         </div>

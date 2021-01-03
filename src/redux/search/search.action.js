@@ -8,3 +8,8 @@ export const onchangeInput = (name) => ({
 export const cleanInput = () => ({
     type: searchActionTypes.CLEAN_ACTION
 })
+
+export const targetDrop = (title) => ({
+    type: searchActionTypes.TARGET_DROP,
+    payload: title
+})

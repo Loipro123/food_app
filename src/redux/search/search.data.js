@@ -307,7 +307,7 @@ export const search_data = [
         urlLink:'drink/fruitjuice/mangojuice'
     },
     {
-        id: 'C1',
+        id: 'C134',
         title: 'Mocha coffee',
         price: 6,
         urlImage: 'https://i.ibb.co/NKF2n4h/mocha-coffee-main.jpg',

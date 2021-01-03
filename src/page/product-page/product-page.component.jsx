@@ -26,7 +26,7 @@ class ProductPage extends React.Component  {
     }
    render(){
 
-    const {urlImage,price,title} = this.props.item;
+    const {urlImage} = this.props.item;
     return (
         <div className='product_page'>
             <div className='product_main'>

@@ -19,12 +19,16 @@ import CheckOut from './page/check-out/check-out.component';
 import {hiddenPopupSelecter,hiddenCommentSelecter} from './redux/pop-up/pop-up.selector';
 import {cartHiddenSelector} from './redux/cart/cart.selector';
 import CartList from './component/cart-list/cart-list.component';
+import SearchDropbox from './component/search-dropbox/search-dropbox.component';
+import {searchHiddenSelector,searchArraySelector} from './redux/search/search.selector';
 
-const App = ({menuCollections,popupHidden,popupComment,cart_hidden}) =>{
+
+const App = ({menuCollections,popupHidden,popupComment,cart_hidden,search_hidden,search_array}) =>{
   return (
     <div className="App">
       <Header/>
       {cart_hidden === true ? <CartList/> : null}
+      {search_hidden === true && search_array ? <SearchDropbox searchArray ={search_array}/> : null}
       <div className='main'>
          <div className='sidebar'>
                {menuCollections.map((item) => (
@@ -61,7 +65,9 @@ const mapStateToProps = createStructuredSelector({
   menuCollections: list_foodSelector,
   popupHidden: hiddenPopupSelecter,
   popupComment: hiddenCommentSelecter,
-  cart_hidden: cartHiddenSelector
+  cart_hidden: cartHiddenSelector,
+  search_hidden: searchHiddenSelector,
+  search_array: searchArraySelector
 })
 
 export default connect(mapStateToProps)(App);

@@ -1,4 +1,4 @@
-const main_data = [
+export const main_data = [
     {
         id:1,
         linkUrl: 'mainfood',
@@ -109,5 +109,3 @@ const main_data = [
         ]
     }
 ]
-
-export default main_data;

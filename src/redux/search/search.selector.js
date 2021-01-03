@@ -11,3 +11,7 @@ export const inputValueSelector = createSelector(
     [mainArraySelector],
     mainArray => mainArray.name
 )
+export const searchHiddenSelector = createSelector(
+    [mainArraySelector],
+    mainArray => mainArray.searchHidden
+)

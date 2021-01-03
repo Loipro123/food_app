@@ -4,8 +4,8 @@ import {ReactComponent as Target} from '../../icon/target.svg';
 import {connect} from 'react-redux';
 // import {FocusSidebar} from '../../redux/sidebar/sidebar.action';
 import {withRouter} from 'react-router-dom';
-const SidebarSub = ({item,title,forcusSidebar,history}) => {
-    const {name,id,forcus,linkUrl} = item;
+const SidebarSub = ({item,history}) => {
+    const {name,forcus,linkUrl} = item;
     return (
         <div className={`${forcus===true ? 'changeBack ': null} sidebar-sub`} onClick={()=> 
            { 

@@ -1,4 +1,3 @@
-import { cartList } from "./cart.selector"
 
 export const removeCart = (cartList,id) => {
     return cartList.filter(item => item.id !== id)

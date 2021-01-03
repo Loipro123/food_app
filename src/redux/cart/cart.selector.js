@@ -22,3 +22,4 @@ export const cartHiddenSelector = createSelector(
     [cartData],
     cart => cart.cart_hidden
 )
+

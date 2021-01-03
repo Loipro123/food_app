@@ -9,16 +9,23 @@ import TotalAmount from '../total-amount/total-amount.component';
 import CustomButton from '../custom-button/custom-button.component';
 import PopupHeader from '../popup-header/popup-header.component';
 import {amountCartList,priceCartList} from '../../redux/cart/cart.selector';
-const AddToBag = ({close_popup,product,price,amount}) => {
+import {withRouter} from 'react-router-dom';
+const AddToBag = ({close_popup,product,price,amount,history}) => {
     return (
     <div className='add_to_bag'>
-        <PopupHeader title='Added To Your Bag' handleClick = { ()=> {close_popup()}}/>
+        <PopupHeader title='Added To Your Bag Successfully' handleClick = { ()=> {close_popup()}} type='add_bag'/>
         <ItemDetail item={product}/>
         <div className='add_bag_footer'>
              <TotalAmount amount={amount} price={price}/>
              <div className='add_bag_btn'>
-                   <CustomButton type='keep'>Keep Shopping</CustomButton>
-                   <CustomButton type='check'>Check Out</CustomButton>
+                   <CustomButton type='keep' onClick={()=> {
+                       close_popup();
+                       history.push('/');
+                   }}>Keep Shopping</CustomButton>
+                   <CustomButton type='check' onClick={()=> {
+                       close_popup();
+                       history.push('/checkout')
+                   }}>Check Out</CustomButton>
              </div>
         </div>
     </div>
@@ -33,4 +40,4 @@ const mapStateToProps = createStructuredSelector({
     amount: amountCartList,
     price: priceCartList
 })
-export default connect(mapStateToProps,mapDispatchToProps)(AddToBag);
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(AddToBag));

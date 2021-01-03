@@ -9,11 +9,20 @@ class Search extends React.Component {
     componentWillUnmount(){
         this.props.cleanValue();
     }
+    guid = () => {
+        let s4 = () => {
+            return Math.floor((1 + Math.random()) * 0x10000)
+                .toString(16)
+                .substring(1);
+        }
+        //return id of format 'aaaaaaaa'-'aaaa'-'aaaa'-'aaaa'-'aaaaaaaaaaaa'
+        return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+    }
     render(){
         return (
             <div className='search_page'>
                {
-                   this.props.arraySearch.length      > 0 ? (this.props.arraySearch.map((item) => <CartItem id={item.id} item={item}/>)):
+                   this.props.arraySearch.length      > 0 ? (this.props.arraySearch.map((item) => <CartItem key={this.guid()} item={item}/>)):
                    (<h2 className='searchStatus'>There is no items matched</h2>)
                
                }
