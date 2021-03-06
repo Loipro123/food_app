@@ -1,13 +1,13 @@
 import React from 'react';
 import './product-information.styles.scss';
 import {connect} from 'react-redux';
-import FeedbackStar from '../feedback-star/feedback-star.component';
+import FeedbackStar from '../../../reuse-component/feedback-star/feedback-star.component';
 import RadioButton from '../radio-button/radio-button.component';
-import ProductQuantity from '../product-quantity/product-quantity.component';
-import CustomButton from '../custom-button/custom-button.component';
+import ProductQuantity from '../../../reuse-component/product-quantity/product-quantity.component';
+import CustomButton from '../../../reuse-component/custom-button/custom-button.component';
 import ProductDetail from '../product-detail/product-detail.component';
-import {openPopup} from '../../redux/pop-up/pop-up.action';
-import {addToBag} from '../../redux/cart/cart.action';
+import {openPopup} from '../../../../redux/pop-up/pop-up.action';
+import {addToBag} from '../../../../redux/cart/cart.action';
 
 class ProductInformation extends React.Component {
     constructor(props){

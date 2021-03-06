@@ -1,7 +1,7 @@
 import React from 'react';
 import './search-dropbox.styles.scss';
 import {connect} from 'react-redux';
-import {targetDrop} from '../../redux/search/search.action';
+import {targetDrop} from '../../../redux/search/search.action';
 
 const SearchDropbox = ({searchArray,targetItem}) => {
     const guid = () => {

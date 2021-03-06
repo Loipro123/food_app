@@ -2,13 +2,13 @@ import React from 'react';
 import './add-to-bag.styles.scss';
 import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
-import {productPopupSelecter} from '../../redux/pop-up/pop-up.selector';
-import {closePopup} from '../../redux/pop-up/pop-up.action';
-import ItemDetail from '../../component/item-detail/item-detail.component';
-import TotalAmount from '../total-amount/total-amount.component';
-import CustomButton from '../custom-button/custom-button.component';
-import PopupHeader from '../popup-header/popup-header.component';
-import {amountCartList,priceCartList} from '../../redux/cart/cart.selector';
+import {productPopupSelecter} from '../../../../redux/pop-up/pop-up.selector';
+import {closePopup} from '../../../../redux/pop-up/pop-up.action';
+import ItemDetail from '../item-detail/item-detail.component';
+import TotalAmount from '../../../reuse-component/total-amount/total-amount.component';
+import CustomButton from '../../../reuse-component/custom-button/custom-button.component';
+import PopupHeader from '../../../reuse-component/popup-header/popup-header.component';
+import {amountCartList,priceCartList} from '../../../../redux/cart/cart.selector';
 import {withRouter} from 'react-router-dom';
 const AddToBag = ({close_popup,product,price,amount,history}) => {
     return (

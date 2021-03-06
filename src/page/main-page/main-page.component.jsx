@@ -1,7 +1,7 @@
 import React from 'react';
 import './main-page.styles.scss';
 import {main_data} from './main-page.data';
-import MainItems from '../../component/main-items/main-items.component';
+import MainItems from '../../component/main-item/main-items/main-items.component';
 
 const MainPage = ()=> (
     <div className='main_page'>

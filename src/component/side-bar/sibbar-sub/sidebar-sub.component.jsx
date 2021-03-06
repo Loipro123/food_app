@@ -1,6 +1,6 @@
 import React from 'react';
 import './sidebar-sub.styles.scss';
-import {ReactComponent as Target} from '../../icon/target.svg';
+import {ReactComponent as Target} from '../../../icon/target.svg';
 import {connect} from 'react-redux';
 // import {FocusSidebar} from '../../redux/sidebar/sidebar.action';
 import {withRouter} from 'react-router-dom';

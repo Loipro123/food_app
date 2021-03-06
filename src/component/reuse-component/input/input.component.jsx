@@ -3,8 +3,8 @@ import './input.styles.scss';
 
 const Input = ({lable,icon,...otherProperties}) => (
     <div className='group'>
-         <input {...otherProperties} className='input-field'/>
-         <label className='lable'>{lable}</label>
+         <input value={otherProperties.value} onChange={otherProperties.handleChange} className='input-field' {...otherProperties} required/>
+         <label className={`lable ${otherProperties.value.length ? 'lable_focus' : ''}`} required>{lable}</label>
          <i className={`${icon} icon`}/>
          <span className='input-forcus'></span>
     </div>

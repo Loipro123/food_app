@@ -2,13 +2,13 @@ import React from 'react';
 import './cart-list.styles.scss';
 import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
-import {cartList} from '../../redux/cart/cart.selector';
-import ItemDetail from '../../component/item-detail/item-detail.component';
-import {amountCartList,priceCartList} from '../../redux/cart/cart.selector';
-import TotalAmount from '../total-amount/total-amount.component';
-import CustomButton from '../custom-button/custom-button.component';
+import {cartList} from '../../../redux/cart/cart.selector';
+import ItemDetail from '../../product/product-item/item-detail/item-detail.component';
+import {amountCartList,priceCartList} from '../../../redux/cart/cart.selector';
+import TotalAmount from '../../reuse-component/total-amount/total-amount.component';
+import CustomButton from '../../reuse-component/custom-button/custom-button.component';
 import {withRouter} from 'react-router-dom';
-import {cartHidden} from '../../redux/cart/cart.action';
+import {cartHidden} from '../../../redux/cart/cart.action';
 const CartList = ({cart_list,price,amount,history,cart_hidden}) => {
     return (
     <div className='cart_list'>

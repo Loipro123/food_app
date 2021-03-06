@@ -2,11 +2,11 @@ import React from 'react';
 import './write-comment.styles.scss';
 import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
-import {productCommentSelecter} from '../../redux/pop-up/pop-up.selector';
-import {closeComment} from '../../redux/pop-up/pop-up.action';
-import PopupHeader from '../popup-header/popup-header.component';
-import FeedbackStar from '../feedback-star/feedback-star.component';
-import CustomButton from '../custom-button/custom-button.component';
+import {productCommentSelecter} from '../../../../redux/pop-up/pop-up.selector';
+import {closeComment} from '../../../../redux/pop-up/pop-up.action';
+import PopupHeader from '../../../reuse-component/popup-header/popup-header.component';
+import FeedbackStar from '../../../reuse-component/feedback-star/feedback-star.component';
+import CustomButton from '../../../reuse-component/custom-button/custom-button.component';
 const WriteComment = ({product,close_comment}) => (
     <div className='write_comment'>
         <PopupHeader title='Write a Review' handleClick={()=> {close_comment()}}/>

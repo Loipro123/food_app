@@ -1,9 +1,9 @@
 import React from 'react';
 import './search-input.styles.scss';
-import {ReactComponent as Search} from '../../icon/search.svg';
+import {ReactComponent as Search} from '../../../icon/search.svg';
 import {connect} from 'react-redux';
-import {onchangeInput} from '../../redux/search/search.action';
-import {inputValueSelector} from '../../redux/search/search.selector';
+import {onchangeInput} from '../../../redux/search/search.action';
+import {inputValueSelector} from '../../../redux/search/search.selector';
 import {withRouter} from 'react-router-dom';
 import {createStructuredSelector} from 'reselect';
 const SearchInput = ({changeInput,history,value}) => {

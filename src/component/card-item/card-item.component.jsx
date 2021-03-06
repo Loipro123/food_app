@@ -1,7 +1,7 @@
 import React from 'react';
 import './card-item.styles.scss';
-import CustomButton from '../custom-button/custom-button.component';
-import FeedbackStar from '../feedback-star/feedback-star.component';
+import CustomButton from '../reuse-component/custom-button/custom-button.component';
+import FeedbackStar from '../reuse-component/feedback-star/feedback-star.component';
 import {connect} from 'react-redux';
 import {ProductAccess} from '../../redux/directory/food.action';
 import {withRouter} from 'react-router-dom';

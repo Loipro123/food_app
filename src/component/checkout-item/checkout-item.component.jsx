@@ -2,8 +2,8 @@ import React from 'react';
 import './checkout-item.styles.scss'
 import {connect} from 'react-redux';
 import {removeCart,increaseCart,descreaseCart} from '../../redux/cart/cart.action';
-import ItemDetail from '../item-detail/item-detail.component';
-import ProductQuantity from '../product-quantity/product-quantity.component';
+import ItemDetail from '../product/product-item/item-detail/item-detail.component';
+import ProductQuantity from '../reuse-component/product-quantity/product-quantity.component';
 const CheckoutItem = ({item,removeItem,increaseItem,decreaseItem}) => {
     const {amount,price,id} = item;
     const subAmount = price * amount;

@@ -4,8 +4,8 @@ import {createStructuredSelector} from 'reselect';
 import {list_foodSelector} from './redux/sidebar/sidebar.selector';
 import {connect} from 'react-redux';
 import {Switch,Route} from 'react-router-dom';
-import SidebarHeader from './component/sidebar-header/sidebar-header.component';
-import Login from './component/login/login.component';
+import SidebarHeader from './component/side-bar/sidebar-header/sidebar-header.component';
+import Login from './component/sign-in/login.component';
 import SignUp from './component/sign-up/sign-up.component';
 import MainPage from './page/main-page/main-page.component';
 import FoodList from './page/food-list/food-list.component';
@@ -18,8 +18,8 @@ import PopupComment from './page/popup-comment/popup-comment.component';
 import CheckOut from './page/check-out/check-out.component';
 import {hiddenPopupSelecter,hiddenCommentSelecter} from './redux/pop-up/pop-up.selector';
 import {cartHiddenSelector} from './redux/cart/cart.selector';
-import CartList from './component/cart-list/cart-list.component';
-import SearchDropbox from './component/search-dropbox/search-dropbox.component';
+import CartList from './component/cart_drop/cart-list/cart-list.component';
+import SearchDropbox from './component/search/search-dropbox/search-dropbox.component';
 import {searchHiddenSelector,searchArraySelector} from './redux/search/search.selector';
 
 

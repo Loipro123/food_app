@@ -1,9 +1,9 @@
 import React from 'react';
 import './sidebar-header.styles.scss';
-import {ReactComponent as DownArrow} from '../../icon/down-arrow.svg';
-import {ReactComponent as UpArrow} from '../../icon/up-arrow.svg';
+import {ReactComponent as DownArrow} from '../../../icon/down-arrow.svg';
+import {ReactComponent as UpArrow} from '../../../icon/up-arrow.svg';
 import {connect} from 'react-redux';
-import {ToogleSidebar} from '../../redux/sidebar/sidebar.action';
+import {ToogleSidebar} from '../../../redux/sidebar/sidebar.action';
 import SidebarSub from '../sibbar-sub/sidebar-sub.component';
 import {withRouter} from 'react-router-dom';
 const SidebarHeader = ({item,tooggleBar,history}) => {

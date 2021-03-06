@@ -65,4 +65,7 @@
     .email{
         font-size: 20px;
     }
+    .lable_focus{
+        @include shrink();
+    }
 }

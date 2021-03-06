@@ -3,15 +3,15 @@ import './product-page.styles.scss';
 import {connect} from 'react-redux';
 import {productSelector} from  '../../redux/directory/food.selector';
 import {createStructuredSelector} from 'reselect';
-import ProductInformation from '../../component/product-information/product-information.component';
-import FeedbackStar from '../../component/feedback-star/feedback-star.component';
-import BarStar from '../../component/bar-star/bar-star.component';
-import CustomButton from '../../component/custom-button/custom-button.component';
-import CustomerReview from '../../component/customer-review/customer-review.component';
-import ProductHeader from '../../component/product-header/product_header.component';
+import ProductInformation from '../../component/product/product-item/product-information/product-information.component';
+import FeedbackStar from '../../component/reuse-component/feedback-star/feedback-star.component';
+import BarStar from '../../component/product/product-review/bar-star/bar-star.component';
+import CustomButton from '../../component/reuse-component/custom-button/custom-button.component';
+import CustomerReview from '../../component/product/product-review/customer-review/customer-review.component';
+import ProductHeader from '../../component/reuse-component/product-header/product_header.component';
 import {slideSelector} from '../../redux/product/product.selector';
 import {productAccess,resetSlide} from '../../redux/product/product.action';
-import SlideShow from '../../component/slide-show/slide-show.component';
+import SlideShow from '../../component/reuse-component/slide-show/slide-show.component';
 import {openComment} from '../../redux/pop-up/pop-up.action';
 
 class ProductPage extends React.Component  {

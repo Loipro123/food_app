@@ -2,7 +2,7 @@ import React from 'react';
 import './header.styles.scss';
 import {ReactComponent as Logo} from '../../icon/logo.svg';
 import {Link} from 'react-router-dom';
-import SearchInput from '../../component/search-input/search-input.component';
+import SearchInput from '../../component/search/search-input/search-input.component';
 import {ReactComponent as Cart} from '../../icon/shopping-bag.svg';
 import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
